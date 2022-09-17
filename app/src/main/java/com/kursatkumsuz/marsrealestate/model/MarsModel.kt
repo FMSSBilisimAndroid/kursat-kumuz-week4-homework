@@ -1,13 +1,18 @@
 package com.kursatkumsuz.marsrealestate.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+import java.io.Serializable
 
-
+@Parcelize
 data class MarsModel(
     val price: Int,
     val id: String,
     val type: String,
     @SerializedName("img_src")
-    private val image: String
-)
+    val image: String
+) : Parcelable
+
+
 
