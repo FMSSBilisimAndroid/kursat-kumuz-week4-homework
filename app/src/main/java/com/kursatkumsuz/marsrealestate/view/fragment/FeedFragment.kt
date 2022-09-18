@@ -1,4 +1,4 @@
-package com.kursatkumsuz.marsrealestate.fragment
+package com.kursatkumsuz.marsrealestate.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import com.kursatkumsuz.marsrealestate.R
 import com.kursatkumsuz.marsrealestate.adapter.MarsAdapter
 import com.kursatkumsuz.marsrealestate.util.Status
 import com.kursatkumsuz.marsrealestate.databinding.FragmentFeedBinding
@@ -45,7 +44,7 @@ class FeedFragment @Inject constructor(
         observeLiveData()
 
         binding.cartButton.setOnClickListener {
-            findNavController().navigate(R.id.action_feedFragment_to_cartFragment)
+            Navigation.findNavController(it).navigate(FeedFragmentDirections.actionFeedFragmentToCartFragment())
         }
 
     }
