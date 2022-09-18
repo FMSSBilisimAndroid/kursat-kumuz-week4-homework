@@ -35,7 +35,7 @@ RecyclerView'da tıklanılan item'ın detayları gösterilir. Add to cart butonu
 
 ## CartFragment
 
-DetailFragment'ta eklenen tüm veriler burada RecyclerView içinde gösterilir. Kullanıcı silmek istediği item'ı sola sürüklerse silebilir. Buy butonuna basarsa tüm data satın alındığı için room database'den silinir.
+DetailFragment'ta eklenen tüm veriler burada RecyclerView içinde gösterilir. Kullanıcı silmek istediği item'ı sola sürüklerse silebilir. RecyclerView'da silme işlemi yapıldığında bu işlemin algılanıp güncellenmesi için Adapter içerisinde DiffUtil kullanılmıştır. Buy butonuna basarsa tüm data satın alındığı için room database'den silinir.
 
 <p align="center">
 <img src="https://media.giphy.com/media/Kl06rb4XbCP5QZ3Cgq/giphy.gif">
