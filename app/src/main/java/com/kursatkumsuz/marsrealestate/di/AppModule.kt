@@ -1,6 +1,7 @@
 package com.kursatkumsuz.marsrealestate.di
 
 import android.content.Context
+import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.kursatkumsuz.marsrealestate.R
@@ -8,6 +9,8 @@ import com.kursatkumsuz.marsrealestate.api.MarsApi
 import com.kursatkumsuz.marsrealestate.constant.ApiConstants
 import com.kursatkumsuz.marsrealestate.repo.MarsRepository
 import com.kursatkumsuz.marsrealestate.repo.MarsRepositoryInterface
+import com.kursatkumsuz.marsrealestate.room.MarsDao
+import com.kursatkumsuz.marsrealestate.room.MarsDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,8 +37,20 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun injectNormalRepo(api: MarsApi) =
-        MarsRepository(api) as MarsRepositoryInterface
+    fun injectRoomDatabase(@ApplicationContext context: Context) = Room.databaseBuilder(
+        context,
+        MarsDatabase::class.java,
+        "mars_database"
+    ).build()
+
+    @Singleton
+    @Provides
+    fun injectDao(database: MarsDatabase) = database.marsDao()
+
+    @Singleton
+    @Provides
+    fun injectNormalRepo(api: MarsApi, dao: MarsDao) =
+        MarsRepository(api, dao) as MarsRepositoryInterface
 
     @Singleton
     @Provides
