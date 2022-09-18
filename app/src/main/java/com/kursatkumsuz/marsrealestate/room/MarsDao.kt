@@ -13,6 +13,9 @@ interface MarsDao {
     @Delete
     suspend fun delete(mars: MarsEntity)
 
+    @Query("DELETE FROM table_mars")
+    suspend fun deleteAllData()
+
     @Query("SELECT * FROM table_mars")
     fun getMars(): LiveData<List<MarsEntity>>
 }
