@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,11 +22,11 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class CartFragment @Inject constructor(
-    private val adapter : CartAdapter
+    private val adapter: CartAdapter
 ) : Fragment() {
 
 
-    private val swipeCallBack = object : ItemTouchHelper.SimpleCallback(0 , ItemTouchHelper.LEFT) {
+    private val swipeCallBack = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
         override fun onMove(
             recyclerView: RecyclerView,
             viewHolder: RecyclerView.ViewHolder,
@@ -64,6 +66,7 @@ class CartFragment @Inject constructor(
         //Call functions
         observeData()
         setRecyclerView()
+        buyAllItems()
     }
 
     /**
@@ -80,11 +83,22 @@ class CartFragment @Inject constructor(
     }
 
     private fun observeData() {
-        viewModel.marsList.observe(viewLifecycleOwner , Observer { mars ->
+        viewModel.marsList.observe(viewLifecycleOwner, Observer { mars ->
             mars?.let {
                 adapter.marsList = mars
             }
         })
+    }
+
+    private fun buyAllItems() {
+        binding.buyButton.setOnClickListener {
+            if (adapter.marsList.isEmpty()) {
+                Toast.makeText(context, "There is nothing to buy", Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.deleteAllData()
+                findNavController().navigate(R.id.action_cartFragment_to_dialogFragment)
+            }
+        }
     }
 
 }
