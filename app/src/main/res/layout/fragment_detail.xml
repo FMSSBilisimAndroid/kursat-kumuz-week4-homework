@@ -25,16 +25,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearance="@style/DetailImageCornerRounded" />
 
-        <ImageButton
-            android:layout_width="@dimen/_36sdp"
-            android:layout_height="@dimen/_36sdp"
-            android:background="#322F2F"
-            android:src="@drawable/ic_baseline_zoom_out_map_24"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_240sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/idCard"
             android:layout_width="@dimen/_160sdp"
@@ -81,8 +71,8 @@
             android:id="@+id/typeCard"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_40sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             app:cardBackgroundColor="#6A3BB4"
             app:cardCornerRadius="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
