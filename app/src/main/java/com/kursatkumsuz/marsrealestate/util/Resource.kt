@@ -1,4 +1,4 @@
-package com.kursatkumsuz.marsrealestate.constant
+package com.kursatkumsuz.marsrealestate.util
 
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {

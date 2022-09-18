@@ -1,4 +1,4 @@
-package com.kursatkumsuz.marsrealestate.constant
+package com.kursatkumsuz.marsrealestate.util
 
 object ApiConstants {
 
