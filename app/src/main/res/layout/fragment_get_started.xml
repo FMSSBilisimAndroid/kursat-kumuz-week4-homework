@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.GetStartedFragment"
+        tools:context=".view.fragment.GetStartedFragment"
         android:background="@drawable/bg_gradient">
 
         <TextView
@@ -19,7 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="36dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="@string/explorer"
+            android:textStyle="bold"
             android:textColor="#F9AD1A"
             android:textSize="@dimen/_20sdp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +32,7 @@
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:textSize="@dimen/_34ssp"
+            android:textSize="@dimen/_30ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.4"
@@ -60,8 +62,7 @@
             android:fontFamily="@font/open_sans"
             android:text="Let's Go"
             android:textSize="@dimen/_18ssp"
-            app:icon="@drawable/ic_rocket"
-            app:iconGravity="textEnd"
+            android:drawableLeft="@drawable/ic_rocket"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />

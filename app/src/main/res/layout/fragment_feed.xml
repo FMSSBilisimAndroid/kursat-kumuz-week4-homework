@@ -10,19 +10,33 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.FeedFragment"
+        tools:context=".view.fragment.FeedFragment"
         android:background="@drawable/bg_gradient">
 
-        <ImageButton
-            android:id="@+id/cartButton"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_70sdp"
-            android:layout_marginEnd="1dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_baseline_add_shopping_cart_24"
-            android:text="Cart"
-            app:layout_constraintEnd_toEndOf="parent"
+        <TextView
+            android:id="@+id/appNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:textColor="#F9AD1A"
+            android:text="Mars Real Estate"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/cartButton"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/ic_baseline_add_shopping_cart_24"
+            android:text="Cart"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="cartbutton" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

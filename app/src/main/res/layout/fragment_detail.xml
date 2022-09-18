@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_gradient"
-        tools:context=".fragment.DetailFragment">
+        tools:context=".view.fragment.DetailFragment">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/marsImageView"
