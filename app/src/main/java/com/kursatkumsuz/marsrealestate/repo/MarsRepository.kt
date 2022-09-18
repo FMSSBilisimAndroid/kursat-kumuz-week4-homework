@@ -2,7 +2,7 @@ package com.kursatkumsuz.marsrealestate.repo
 
 import androidx.lifecycle.LiveData
 import com.kursatkumsuz.marsrealestate.api.MarsApi
-import com.kursatkumsuz.marsrealestate.constant.Resource
+import com.kursatkumsuz.marsrealestate.util.Resource
 import com.kursatkumsuz.marsrealestate.model.MarsModel
 import com.kursatkumsuz.marsrealestate.room.MarsDao
 import com.kursatkumsuz.marsrealestate.room.MarsEntity
@@ -35,6 +35,10 @@ class MarsRepository @Inject constructor(
 
     override suspend fun deleteMars(mars: MarsEntity) {
         dao.delete(mars)
+    }
+
+    override suspend fun deleteAllData() {
+        dao.deleteAllData()
     }
 
     override fun getMars(): LiveData<List<MarsEntity>> {
