@@ -4,12 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.kursatkumsuz.marsrealestate.databinding.ListItemBinding
-import com.kursatkumsuz.marsrealestate.fragment.FeedFragmentDirections
+import com.kursatkumsuz.marsrealestate.view.fragment.FeedFragmentDirections
 import com.kursatkumsuz.marsrealestate.model.MarsModel
 import javax.inject.Inject
 

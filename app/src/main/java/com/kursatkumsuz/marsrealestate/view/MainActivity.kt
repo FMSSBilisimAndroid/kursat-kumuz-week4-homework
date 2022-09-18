@@ -2,9 +2,8 @@ package com.kursatkumsuz.marsrealestate.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentFactory
 import com.kursatkumsuz.marsrealestate.R
-import com.kursatkumsuz.marsrealestate.fragment.MarsFragmentFactory
+import com.kursatkumsuz.marsrealestate.view.fragment.MarsFragmentFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
