@@ -23,7 +23,7 @@
 
 ## FeedFragment
 
-RecyclerView scroll ettirildiğinde animasyon aktif hale gelir. RecyclerView'ın herhangi bir item'ımına tıklanıldığında DetailFragment'a gidilir ve aynı zamanda tıklanılan item'ın verisi de parcelable şeklinde DetailFragment'a aktarılır. En üst sağ kısımda Cart butonu bulur ve tıklanıldığında CartFragment'a gidilir.
+RecyclerView scroll ettirildiğinde animasyon aktif hale gelir. RecyclerView'ın herhangi bir item'ına tıklanıldığında DetailFragment'a gidilir ve aynı zamanda tıklanılan item'ın verisi de parcelable şeklinde DetailFragment'a aktarılır. En üst sağ kısımda Cart butonu bulur ve tıklanıldığında CartFragment'a gidilir.
 
 <p align="center">
 <img src="https://media.giphy.com/media/bJFo6f59tew5SAhcvE/giphy.gif">
