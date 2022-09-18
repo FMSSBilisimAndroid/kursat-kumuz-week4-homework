@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.kursatkumsuz.marsrealestate.databinding.CartItemBinding
-import com.kursatkumsuz.marsrealestate.databinding.FragmentCartBinding
 import com.kursatkumsuz.marsrealestate.room.MarsEntity
 import javax.inject.Inject
 

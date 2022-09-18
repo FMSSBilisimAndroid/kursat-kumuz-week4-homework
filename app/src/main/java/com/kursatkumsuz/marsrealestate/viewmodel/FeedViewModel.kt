@@ -24,6 +24,10 @@ class FeedViewModel @Inject constructor(
         getDataFromAPI()
     }
 
+    /**
+     * Gets data from API
+     * Runs viewModelScope for suspend function
+     */
     private fun getDataFromAPI() {
         data.value = Resource.loading(null)
         viewModelScope.launch {

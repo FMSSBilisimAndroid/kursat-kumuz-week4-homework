@@ -13,6 +13,11 @@ class MarsRepository @Inject constructor(
     private val dao: MarsDao
 ) : MarsRepositoryInterface {
 
+
+    /**
+     * Gets MarsData from API
+     * @return [Resource<List<MarsModel]
+     */
     override suspend fun getMarsData(): Resource<List<MarsModel>> {
         return try {
             val response = api.getData()
@@ -29,18 +34,33 @@ class MarsRepository @Inject constructor(
         }
     }
 
+    /**
+     * Saves data to Room database
+     * @param mars for save to database
+     */
     override suspend fun insertMars(mars: MarsEntity) {
         dao.insert(mars)
     }
 
+    /**
+     * Delete data from Room database
+     * @param mars for delete from database
+     */
     override suspend fun deleteMars(mars: MarsEntity) {
         dao.delete(mars)
     }
 
+    /**
+     * Deletes all data from Room database
+     */
     override suspend fun deleteAllData() {
         dao.deleteAllData()
     }
 
+    /**
+     * Gets data from Room database
+     * @return [LiveData<List<MarsModel]
+     */
     override fun getMars(): LiveData<List<MarsEntity>> {
         return dao.getMars()
     }

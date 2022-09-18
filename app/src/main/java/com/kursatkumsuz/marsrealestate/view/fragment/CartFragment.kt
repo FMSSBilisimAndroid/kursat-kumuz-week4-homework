@@ -44,7 +44,6 @@ class CartFragment @Inject constructor(
             val selectedMars = adapter.marsList[layoutPosition]
             viewModel.deleteMars(selectedMars)
         }
-
     }
 
     private lateinit var binding: FragmentCartBinding
@@ -82,6 +81,10 @@ class CartFragment @Inject constructor(
         }
     }
 
+    /**
+     * Observes liveData
+     * Sets value of liveData to adapter list
+     */
     private fun observeData() {
         viewModel.marsList.observe(viewLifecycleOwner, Observer { mars ->
             mars?.let {
@@ -90,6 +93,11 @@ class CartFragment @Inject constructor(
         })
     }
 
+    /**
+     * Checks if list is empty or not
+     * Deletes all data from room database
+     * Navigate -> DialogFragment
+     */
     private fun buyAllItems() {
         binding.buyButton.setOnClickListener {
             if (adapter.marsList.isEmpty()) {

@@ -24,6 +24,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    /**
+     * Injects RetrofitApi
+     * @return [MarsApi]
+     */
     @Singleton
     @Provides
     fun injectRetrofitAPI(): MarsApi {
@@ -35,6 +39,10 @@ object AppModule {
             .create(MarsApi::class.java)
     }
 
+    /**
+     * Injects RoomDatabase
+     * @param context for databaseBuilder
+     */
     @Singleton
     @Provides
     fun injectRoomDatabase(@ApplicationContext context: Context) = Room.databaseBuilder(
@@ -43,15 +51,28 @@ object AppModule {
         "mars_database"
     ).build()
 
+    /**
+     * Injects DAO
+     * @param database for access MarsDao
+     */
     @Singleton
     @Provides
     fun injectDao(database: MarsDatabase) = database.marsDao()
 
+    /**
+     * Injects Repository
+     * @param api for MarsRepository
+     * @param dao for MarsRepository
+     */
     @Singleton
     @Provides
     fun injectNormalRepo(api: MarsApi, dao: MarsDao) =
         MarsRepository(api, dao) as MarsRepositoryInterface
 
+    /**
+     * Injects Glide
+     * @param context for Glide
+     */
     @Singleton
     @Provides
     fun injectGlide(@ApplicationContext context: Context) = Glide.with(context)

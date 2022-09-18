@@ -47,9 +47,11 @@ class DetailFragment @Inject constructor(
         init()
         getMarsIdFromRoom()
         saveDatabase()
-
     }
 
+    /**
+     * Sets values that passed
+     */
     private fun setValues() {
         for (data in selectedData) {
             id = data.id
@@ -58,7 +60,21 @@ class DetailFragment @Inject constructor(
             image = data.image
         }
     }
+    /**
+     * Sets values to views
+     */
+    private fun init() {
+        binding.apply {
+            glide.load(image).into(marsImageView)
+            idText.text = id
+            priceText.text = "$$price"
+            typeText.text = type
+        }
+    }
 
+    /**
+     * Checks whether the data to be recorded already exists
+     */
     private fun saveDatabase() {
         binding.addCartButton.setOnClickListener {
 
@@ -69,7 +85,9 @@ class DetailFragment @Inject constructor(
             }
         }
     }
-
+    /**
+     * Gets all Id from room database
+     */
     private fun getMarsIdFromRoom() {
         viewModel.marsList.observe(viewLifecycleOwner, Observer { mars ->
             mars?.let {
@@ -81,12 +99,4 @@ class DetailFragment @Inject constructor(
         })
     }
 
-    private fun init() {
-        binding.apply {
-            glide.load(image).into(marsImageView)
-            idText.text = id
-            priceText.text = "$$price"
-            typeText.text = type
-        }
-    }
 }

@@ -7,6 +7,10 @@ import retrofit2.http.GET
 
 interface MarsApi {
 
+    /**
+     * Gets data from API
+     * @return [Response<List<MarsModel>>]
+     */
     @GET(ApiConstants.API)
     suspend fun getData() : Response<List<MarsModel>>
 }

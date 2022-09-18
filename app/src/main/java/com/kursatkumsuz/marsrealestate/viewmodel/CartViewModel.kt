@@ -19,16 +19,30 @@ class CartViewModel @Inject constructor(
         repo.deleteMars(mars)
     }
 
-    fun deleteAllData() {
-        viewModelScope.launch {
-            repo.deleteAllData()
-        }
+    /**
+     * Deletes all data from room database
+     * Runs viewModelScope for suspend function
+     */
+    fun deleteAllData() = viewModelScope.launch {
+        repo.deleteAllData()
     }
 
+    /**
+     * Saves data to room database
+     * Runs viewModelScope for suspend function
+     * @param mars for save to room
+     */
     private fun insertMars(mars: MarsEntity) = viewModelScope.launch {
         repo.insertMars(mars)
     }
 
+    /**
+     * Makes a object for insert to room
+     * @param price MarsEntity object
+     * @param id MarsEntity object
+     * @param type MarsEntity object
+     * @param image MarsEntity object
+     */
     fun makeMars(price: Int, id: String, type: String, image: String) {
         val mars = MarsEntity(price, id, type, image)
         insertMars(mars)
