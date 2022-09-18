@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.GetStartedFragment"
+        android:background="@drawable/bg_gradient">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:text="@string/explorer"
+            android:textColor="#F9AD1A"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/getStartedText"
+            android:layout_width="@dimen/_270sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="@dimen/_34ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_320sdp"
+            android:layout_height="@dimen/_220sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_start_screen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/getStartedText"
+            app:layout_constraintVertical_bias="0.189" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startButton"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="52dp"
+            android:backgroundTint="#6A3BB4"
+            android:fontFamily="@font/open_sans"
+            android:text="Let's Go"
+            android:textSize="@dimen/_18ssp"
+            app:icon="@drawable/ic_rocket"
+            app:iconGravity="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
