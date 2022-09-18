@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.kursatkumsuz.marsrealestate.R
 import com.kursatkumsuz.marsrealestate.api.MarsApi
-import com.kursatkumsuz.marsrealestate.constant.ApiConstants
+import com.kursatkumsuz.marsrealestate.util.ApiConstants
 import com.kursatkumsuz.marsrealestate.repo.MarsRepository
 import com.kursatkumsuz.marsrealestate.repo.MarsRepositoryInterface
 import com.kursatkumsuz.marsrealestate.room.MarsDao
