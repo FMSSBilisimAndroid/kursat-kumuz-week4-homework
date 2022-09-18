@@ -30,7 +30,10 @@ class MarsAdapter @Inject constructor(
         val animation = AnimationUtils.loadAnimation(holder.itemView.context, android.R.anim.slide_in_left)
         holder.itemView.startAnimation(animation)
 
-        glide.load(dataList[position].image).into(holder.binding.rowImageView)
+        holder.binding.apply {
+            glide.load(dataList[position].image).into(rowImageView)
+            idText.text = dataList[position].id
+        }
 
         holder.itemView.setOnClickListener {
             val action = FeedFragmentDirections.actionListFragmentToDetailFragment(arrayOf(dataList.toTypedArray()[position]))
