@@ -19,6 +19,12 @@ class CartViewModel @Inject constructor(
         repo.deleteMars(mars)
     }
 
+    fun deleteAllData() {
+        viewModelScope.launch {
+            repo.deleteAllData()
+        }
+    }
+
     private fun insertMars(mars: MarsEntity) = viewModelScope.launch {
         repo.insertMars(mars)
     }
