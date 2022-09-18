@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kursatkumsuz.marsrealestate.R
 import com.kursatkumsuz.marsrealestate.adapter.MarsAdapter
-import com.kursatkumsuz.marsrealestate.constant.Status
+import com.kursatkumsuz.marsrealestate.util.Status
 import com.kursatkumsuz.marsrealestate.databinding.FragmentFeedBinding
 import com.kursatkumsuz.marsrealestate.model.MarsModel
 import com.kursatkumsuz.marsrealestate.viewmodel.FeedViewModel

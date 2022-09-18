@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kursatkumsuz.marsrealestate.constant.Resource
+import com.kursatkumsuz.marsrealestate.util.Resource
 import com.kursatkumsuz.marsrealestate.model.MarsModel
 import com.kursatkumsuz.marsrealestate.repo.MarsRepositoryInterface
 import dagger.hilt.android.lifecycle.HiltViewModel
