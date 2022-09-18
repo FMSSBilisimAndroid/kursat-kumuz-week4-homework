@@ -10,6 +10,11 @@
 *  `MVVM` for architecture
 *  `Lottie` for animation
 
+## 📸 Room Test Result
+<p align="center">
+<img src="https://media.giphy.com/media/QysEmzSQbzpriuUNtd/giphy.gif">
+ </p>
+
 
 ## 📸 GIF
 <p align="center">
